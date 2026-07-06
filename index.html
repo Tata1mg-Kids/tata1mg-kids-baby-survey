@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<title>The Parent Pulse — Tata 1mg Kids &amp; Baby</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Nunito+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#0B6E4F;--teal-mid:#1A9E72;--teal-light:#E0F5EC;--teal-xlight:#F2FBF7;
+  --coral:#E8602A;--coral-light:#FEF0EB;
+  --amber:#F5A623;--amber-light:#FEF6E7;
+  --ink:#1C2B22;--ink-mid:#3D5246;--ink-soft:#6B8278;
+  --surface:#F7FAF8;--white:#FFFFFF;--border:#D4E6DC;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito Sans',sans-serif;background:var(--surface);color:var(--ink);min-height:100vh;line-height:1.6}
+
+/* Hero */
+.hero{background:var(--teal);position:relative;overflow:hidden}
+.hero-inner{max-width:680px;margin:0 auto;padding:40px 28px 32px;position:relative;z-index:1}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.15);color:#A8EDD1;font-family:'Nunito',sans-serif;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;margin-bottom:12px;letter-spacing:.5px;text-transform:uppercase}
+.hero h1{font-family:'Nunito',sans-serif;font-size:clamp(22px,5vw,30px);font-weight:800;color:#fff;line-height:1.2;margin-bottom:8px}
+.hero h1 span{color:#6EDBB0}
+.hero-sub{font-size:14px;color:#A8EDD1;line-height:1.75;max-width:520px;margin-bottom:20px}
+.hero-chips{display:flex;gap:16px;flex-wrap:wrap}
+.chip{font-size:12px;color:#A8EDD1;font-weight:600;opacity:.9}
+
+/* Progress */
+.prog-wrap{background:var(--white);border-bottom:1px solid var(--border);padding:10px 24px;position:sticky;top:0;z-index:100}
+.prog-inner{max-width:680px;margin:0 auto}
+.prog-row{display:flex;justify-content:space-between;margin-bottom:5px}
+.prog-lbl{font-size:12px;color:var(--ink-soft);font-weight:600}
+.prog-pct{font-size:12px;color:var(--coral);font-weight:700}
+.prog-track{height:5px;background:var(--teal-light);border-radius:10px;overflow:hidden}
+.prog-fill{height:5px;background:var(--coral);border-radius:10px;transition:width .4s ease}
+
+/* Main */
+.main{max-width:680px;margin:0 auto;padding:24px 20px 60px}
+
+/* Section break */
+.sec-break{display:flex;align-items:center;gap:10px;margin:20px 0 12px}
+.sec-line{flex:1;height:1px;background:var(--border)}
+.sec-lbl{font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--ink-soft);white-space:nowrap}
+
+/* Encouragement */
+.cheer{background:var(--coral-light);border-radius:10px;padding:10px 16px;margin-bottom:12px;font-size:13px;color:var(--coral);font-weight:600;text-align:center;line-height:1.5}
+
+/* Question card */
+.q-card{background:var(--white);border:1.5px solid var(--border);border-radius:18px;padding:22px 20px;margin-bottom:12px;transition:border-color .2s}
+.q-card.active{border-color:var(--teal-mid)}
+.q-card.done{border-color:#A8EDD1}
+.q-hdr{display:flex;align-items:flex-start;gap:12px;margin-bottom:16px}
+.q-num{width:30px;height:30px;border-radius:50%;background:var(--teal-light);color:var(--teal);font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s,color .2s}
+.q-card.done .q-num{background:var(--teal);color:#fff}
+.q-badge{font-size:10px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;padding:2px 8px;border-radius:20px;display:inline-block;margin-bottom:6px}
+.b-tick{background:var(--teal-light);color:var(--teal)}
+.b-multi{background:var(--amber-light);color:#9A6200}
+.b-rate{background:var(--coral-light);color:var(--coral)}
+.b-nps{background:#EEEDFE;color:#3C3489}
+.b-text{background:#EAF3DE;color:#27500A}
+.q-text{font-family:'Nunito',sans-serif;font-size:16px;font-weight:700;color:var(--ink);line-height:1.45}
+.q-sub{font-size:12.5px;color:var(--ink-soft);margin-top:5px;line-height:1.6;font-style:italic}
+.req{color:var(--coral);margin-left:2px}
+
+/* Options */
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{display:flex;align-items:center;gap:0;padding:12px 18px;border:1.5px solid var(--border);border-radius:13px;cursor:pointer;transition:all .15s;background:var(--surface);user-select:none}
+.opt:hover{border-color:var(--teal-mid);background:var(--teal-xlight)}
+.opt.sel{border-color:var(--teal-mid);background:var(--teal-light);border-left:4px solid var(--teal-mid)}
+.opt.sel .opt-label{color:var(--teal);font-weight:700}
+.opt.sel .opt-box{background:var(--teal-mid);border-color:var(--teal-mid)}
+.opt-box{width:18px;height:18px;border:2px solid var(--border);border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .15s}
+.opt-box.round{border-radius:50%}
+.opt-box svg{display:none}
+.opt.sel .opt-box svg{display:block}
+.opt-label{font-size:14px;color:var(--ink-mid);line-height:1.4}
+
+/* Stars */
+.stars-wrap{margin-bottom:6px}
+.stars{display:flex;gap:10px;margin-bottom:8px}
+.star{font-size:36px;cursor:pointer;color:#D3D1C7;transition:color .12s,transform .12s;user-select:none;line-height:1}
+.star:hover,.star.lit{color:var(--amber);transform:scale(1.12)}
+.star-labels{display:flex;justify-content:space-between;font-size:11px;color:var(--ink-soft);font-weight:600}
+
+/* NPS */
+.nps-row{display:flex;gap:5px;flex-wrap:wrap}
+.nps-btn{width:48px;height:48px;border-radius:10px;border:1.5px solid var(--border);background:var(--surface);cursor:pointer;font-family:'Nunito',sans-serif;font-size:14px;font-weight:700;color:var(--ink-mid);transition:all .15s;display:flex;align-items:center;justify-content:center}
+.nps-btn:hover{border-color:var(--teal-mid);background:var(--teal-xlight)}
+.nps-btn.sel{background:var(--coral);border-color:var(--coral);color:#fff}
+.nps-labels{display:flex;justify-content:space-between;font-size:11px;color:var(--ink-soft);font-weight:600;margin-top:6px}
+
+/* Textarea */
+.q-textarea{width:100%;border:1.5px solid var(--border);border-radius:12px;padding:14px 15px;font-size:14px;font-family:'Nunito Sans',sans-serif;color:var(--ink);background:var(--surface);resize:vertical;min-height:100px;line-height:1.7;transition:border-color .15s}
+.q-textarea:focus{outline:none;border-color:var(--teal-mid);background:var(--white)}
+.q-textarea::placeholder{color:var(--ink-soft);opacity:.65;font-style:italic}
+.char-hint{font-size:11px;color:var(--ink-soft);text-align:right;margin-top:4px}
+
+/* Text input for brand */
+.q-input{width:100%;border:1.5px solid var(--border);border-radius:12px;padding:12px 15px;font-size:14px;font-family:'Nunito Sans',sans-serif;color:var(--ink);background:var(--surface);transition:border-color .15s;margin-top:8px}
+.q-input:focus{outline:none;border-color:var(--teal-mid);background:var(--white)}
+.q-input::placeholder{color:var(--ink-soft);opacity:.65;font-style:italic}
+
+/* Nav */
+.nav-bar{display:flex;justify-content:space-between;align-items:center;margin-top:18px;gap:10px}
+.btn{font-family:'Nunito',sans-serif;font-size:14px;font-weight:700;padding:12px 24px;border-radius:12px;border:none;cursor:pointer;transition:all .15s}
+.btn:disabled{opacity:.3;cursor:not-allowed}
+.btn-back{background:var(--white);color:var(--ink-soft);border:1.5px solid var(--border)}
+.btn-next{background:var(--coral);color:#fff;flex:1;max-width:210px}
+.nav-prog{font-size:12px;color:var(--ink-soft);font-weight:600}
+
+/* Done screen */
+.done-screen{text-align:center;padding:48px 20px;display:none}
+.done-icon{width:80px;height:80px;background:var(--teal-light);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 22px;font-size:36px}
+.done-screen h2{font-family:'Nunito',sans-serif;font-size:24px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.done-screen p{font-size:14px;color:var(--ink-soft);line-height:1.7;max-width:420px;margin:0 auto 24px}
+
+@media(max-width:480px){
+  .hero-inner{padding:24px 16px 20px}
+  .main{padding:16px 14px 50px}
+  .q-card{padding:16px;border-radius:14px}
+  .star{font-size:30px}
+  .q-text{font-size:15px}
+  .nps-btn{width:40px;height:40px;font-size:13px}
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">
+      <span style="width:6px;height:6px;background:#A8EDD1;border-radius:50%;display:inline-block"></span>
+      Tata 1mg &#x2022; Kids &amp; Baby Care
+    </div>
+    <h1>The Parent Pulse<br><span>Your honest takes shape what we build</span></h1>
+    <p class="hero-sub">Hi, I am Aditi from Tata 1mg's Kids &amp; Baby team. No sales pitch, no agenda — I genuinely want to understand what parenting feels like from your side. Your real answers (not the polished ones) will directly shape what we stock and how we show up for you.</p>
+    <div class="hero-chips">
+      <div class="chip">3 minutes</div>
+      <div class="chip">12 questions, mostly one tap</div>
+      <div class="chip">Fully anonymous</div>
+    </div>
+  </div>
+</div>
+
+<div class="prog-wrap" id="prog-wrap">
+  <div class="prog-inner">
+    <div class="prog-row">
+      <span class="prog-lbl" id="prog-lbl">Question 1 of 12</span>
+      <span class="prog-pct" id="prog-pct">8%</span>
+    </div>
+    <div class="prog-track"><div class="prog-fill" id="prog-fill" style="width:8%"></div></div>
+  </div>
+</div>
+
+<div class="main">
+  <div id="survey-body"></div>
+  <div class="done-screen" id="done-screen">
+    <div class="done-icon"></div>
+    <h2>You are a legend. Thank you!</h2>
+    <p>Every single answer you gave will shape what we stock, how we communicate, and what we build next for parents like you. This is exactly the kind of input that creates real change.</p>
+    <div style="background:var(--teal-light);border-radius:14px;padding:16px 20px;max-width:420px;margin:0 auto">
+      <p style="font-size:13px;color:var(--teal);font-weight:600;margin:0">— Aditi Goenka, Category Manager, Kids &amp; Baby Care, Tata 1mg</p>
+    </div>
+  </div>
+</div>
+
+<script>
+var SHEET='https://script.google.com/macros/s/AKfycbymEvUKC7wEdEUTOO87K_cuPYG-bd0dmNLSoiILWyUM-RsOCk408vK0aQAjzqiV1mVg/exec';
+
+var QS_EXPECTING=[
+{id:'eq2',section:'Getting ready for your little one',fmt:'checkbox',badge:'pick all that apply',bc:'b-multi',req:true,
+ text:'What worries you most about the newborn stage?',
+ sub:'Pick everything that feels real. You are not alone in any of these.',
+ opts:[{l:'Feeding — breastfeeding, formula, what is right for my baby',e:''},{l:'Skin care — rashes, dryness, what products are safe',e:''},{l:'Vaccinations — what, when, and where',e:''},{l:'Sleep — theirs and therefore mine',e:''},{l:'Getting medicine dosing right when they are sick',e:''},{l:'Finding a paediatrician I actually trust',e:''},{l:'Whether they are growing and developing normally',e:''},{l:'Honestly, I feel fairly prepared',e:''}]},
+{id:'eq3',fmt:'checkbox',badge:'pick all that apply',bc:'b-multi',req:true,
+ text:'What are you already stocking up on or planning to buy before the baby arrives?',
+ sub:'Pick everything on your list.',
+ opts:[{l:'Formula or feeding supplies',e:''},{l:'Diapers and wipes',e:''},{l:'Baby skincare and bathing products',e:''},{l:'Vitamin D drops or other supplements',e:''},{l:'A thermometer and medicine kit',e:''},{l:'Baby-proofing or safety products',e:''},{l:'I am still figuring out the list',e:''}]},
+{id:'eq4',fmt:'radio',badge:'one tap',bc:'b-tick',req:true,
+ text:'When you need products or advice for your newborn — where do you plan to go first?',
+ sub:'The one you are most likely to reach for.',
+ opts:[{l:'Tata 1mg',e:''},{l:'Amazon',e:''},{l:'FirstCry',e:''},{l:'Blinkit or Zepto',e:''},{l:'Local chemist or pharmacy',e:''},{l:'My paediatrician directly',e:''},{l:'Not sure yet',e:''}]},
+{id:'eq5',fmt:'radio',badge:'one tap',bc:'b-tick',req:false,
+ text:'Is there a brand you have already researched for your newborn but cannot find on 1mg?',
+ sub:'If yes, name it below — it goes straight to our buying team.',
+ hasBrandInput:true,
+ opts:[{l:'Yes — I will name it below',e:''},{l:'Not that I can think of yet',e:''}]},
+{id:'eq6',fmt:'radio',badge:'one tap',bc:'b-tick',req:true,
+ text:'Would you want 1mg to automatically remind you — or reorder — newborn essentials before you run out?',
+ sub:'Things like formula, diapers, vitamin D drops. So you never have to remember.',
+ opts:[{l:'Yes — that would be a lifesaver',e:''},{l:'Maybe — depends on price and flexibility',e:''},{l:'Probably not',e:''},{l:'No — I prefer to choose each time',e:''}]},
+{id:'eq7',fmt:'nps',badge:'0 to 10',bc:'b-nps',req:true,
+ text:'How likely are you to try Tata 1mg for your newborn health and care needs?',
+ sub:'0 = very unlikely — 10 = definitely planning to'},
+{id:'eq8',fmt:'textarea',badge:'optional',bc:'b-text',req:false,
+ text:'Anything else on your mind about the newborn stage or what you wish you could find more easily?',
+ sub:'No pressure — but if something comes to mind, we genuinely want to hear it.',
+ ph:'I wish there was a clear guide on what to actually stock up on before the baby arrives...'}
+];
+
+var QS_CURRENT=[
+{id:'q2',section:'What keeps you up at night',fmt:'checkbox',badge:'pick all that apply',bc:'b-multi',req:true,
+ text:'What has genuinely kept you up at night about your child — literally or figuratively?',
+ sub:'Pick everything that feels real. No right or wrong answers here.',
+ opts:[{l:'Feeding or formula struggles',e:''},{l:'Diaper rash or skin issues',e:''},{l:'Keeping up with vaccinations',e:''},{l:'One illness after another',e:''},{l:'Sleep — theirs, and therefore mine',e:''},{l:'Whether their growth and development is on track',e:''},{l:'Finding a paediatrician I actually trust',e:''},{l:'Getting medicine dosing right',e:''},{l:'Getting them to eat anything nutritious',e:''},{l:'Tantrums, behaviour, or screen time',e:''},{l:'Honestly, none of this — smooth sailing so far',e:''}]},
+{id:'q3',fmt:'radio',badge:'one tap',bc:'b-tick',req:true,
+ text:'If you could fix just one of these tonight — which would it be?',
+ sub:'The one that feels most urgent right now. Not the most important-sounding. The most urgent.',
+ cOn:'q2',cFilter:true,opts:[]},
+{id:'q4',fmt:'radio',badge:'one tap',bc:'b-tick',req:true,
+ text:'How much headspace does this take up in a typical week?',
+ sub:'Be honest — this helps us understand how much it actually weighs on you.',
+ opts:[{l:'Barely a thought — it is manageable',e:''},{l:'A background worry I check in on',e:''},{l:'A recurring stressor I actively manage',e:''},{l:'It is consuming — I think about it every day',e:''}]},
+{id:'q5',section:'Where you turn for help',fmt:'checkbox',badge:'pick all that apply',bc:'b-multi',req:true,
+ text:'When something feels off with your child — who or what do you turn to first?',
+ sub:'The very first thing you do. Not the ideal answer — the real one.',
+ opts:[{l:'Their paediatrician',e:''},{l:'Google or YouTube',e:''},{l:'A parenting WhatsApp group or Reddit',e:''},{l:'My mother, mother-in-law, or a trusted friend',e:''},{l:'Instagram or social media',e:''},{l:'A health app',e:''},{l:'I mostly figure it out myself',e:''}]},
+{id:'q6',fmt:'radio',badge:'one tap',bc:'b-tick',req:true,
+ text:'If you had to name one place you trust most for your child health needs — where would that be?',
+ sub:'The one you would go to without thinking twice.',
+ opts:[{l:'Tata 1mg',e:''},{l:'Amazon',e:''},{l:'FirstCry',e:''},{l:'Blinkit or Zepto',e:''},{l:'My local chemist or pharmacy',e:''},{l:'Honestly, I do not have one go-to yet',e:''}]},
+{id:'q7',fmt:'rating',badge:'rating 1 to 5',bc:'b-rate',req:true,
+ text:'And how well does Tata 1mg solve that need for you right now?',
+ sub:'Based on your experience so far. If you have not used 1mg for this, tap 1.',
+ lo:'Does not help at all',hi:'Does it perfectly'},
+{id:'q8',section:'When things go wrong',fmt:'radio',badge:'one tap',bc:'b-tick',req:true,
+ text:'Have you ever tried to buy something for your child on Tata 1mg and walked away without it?',
+ sub:'We want the honest answer, even if it stings a little.',
+ opts:[{l:'No — I buy from 1mg regularly with no issues',e:''},{l:'I have never actually tried buying kids products on 1mg',e:''},{l:'Yes — it was out of stock',e:''},{l:'Yes — I could not find what I needed',e:''},{l:'Yes — I found it cheaper somewhere else',e:''},{l:'Yes — some other reason',e:''}]},
+{id:'q8b',fmt:'radio',badge:'one tap',bc:'b-tick',req:false,
+ text:'When that happened, where did you go instead?',
+ sub:'No judgment at all — just genuinely curious where parents turn.',
+ cOn:'q8',cVals:['Yes — it was out of stock','Yes — I could not find what I needed'],
+ opts:[{l:'Amazon',e:''},{l:'My local chemist',e:''},{l:'Blinkit or Zepto',e:''},{l:'FirstCry',e:''},{l:'I waited and tried 1mg again later',e:''},{l:'I just had to go without it',e:''},{l:'Somewhere else',e:''}]},
+{id:'q9',fmt:'radio',badge:'one tap',bc:'b-tick',req:true,
+ text:'If 1mg ran out of your child essentials frequently — how would you feel?',
+ sub:'Pick the most honest answer. Not the most polite one.',
+ opts:[{l:'Very frustrated — I would stop using 1mg for this',e:''},{l:'Quite annoyed — I would look for a better alternative',e:''},{l:'Mildly irritated but I would manage',e:''},{l:'It would not really bother me',e:''}]},
+{id:'q10',section:'What 1mg could be for you',fmt:'checkbox',badge:'pick all that apply',bc:'b-multi',req:true,
+ text:'If we built you a personal health assistant just for your child — what would you actually want it to do?',
+ sub:'Pick everything you would genuinely use. Not what sounds impressive.',
+ opts:[{l:'Get me a doctor on call, fast',e:''},{l:'Track vaccines and remind me before I forget',e:''},{l:'Auto-order the stuff we always run out of — like formula or vitamins',e:''},{l:'Track my child growth and flag if something seems off',e:''},{l:'Tell me what is actually right for their age — not just what is trending',e:''},{l:'Guarantee everything I buy is genuine and safe',e:''},{l:'Help me manage my own mental load as a parent',e:''},{l:'Connect me with other parents going through the same thing',e:''}]},
+{id:'q11',fmt:'radio',badge:'one tap',bc:'b-tick',req:false,
+ text:'Is there a brand you keep searching for on 1mg but just cannot find?',
+ sub:'If yes, we want to know — this goes straight to our buying team.',
+ hasBrandInput:true,
+ opts:[{l:'Yes — I will name it below',e:''},{l:'Not that I can think of right now',e:''}]},
+{id:'q12',fmt:'nps',badge:'0 to 10',bc:'b-nps',req:true,
+ text:'How likely are you to tell another parent to try 1mg for their child health needs?',
+ sub:'0 = not at all — 10 = absolutely, I already have'},
+{id:'q13',section:'One last thing',fmt:'textarea',badge:'optional',bc:'b-text',req:false,
+ text:'If you could give a brand-new parent one piece of advice about their child health — what would it be?',
+ sub:'No pressure at all. But if something comes to mind, we would genuinely love to hear it.',
+ ph:'Take a breath. Trust your instincts more than you think you should...'}
+];
+
+var CHEER={
+  'q5':'Halfway there — you are doing brilliantly',
+  'q9':'Almost done — just 3 more short ones',
+  'q13':'Last question — this one is just for you'
+};
+
+var state={cur:0,ans:{},brandText:'',qs:[],track:''};
+
+function build(){
+  // Determine track from Q1
+  var age=state.ans['q1']||'';
+  if(age.indexOf('expecting')>-1){
+    state.track='expecting';
+  } else if(age){
+    state.track='current';
+  } else {
+    state.track='';
+  }
+
+  var baseQ1={id:'q1',section:'First, about your little one',fmt:'radio',badge:'one tap',bc:'b-tick',req:true,
+    text:'How old is your child?',
+    sub:'If you have more than one, pick the youngest.',
+    opts:[{l:'Newborn — 0 to 3 months',e:''},{l:'Infant — 3 to 12 months',e:''},{l:'Toddler — 1 to 3 years',e:''},{l:'Preschooler — 3 to 5 years',e:''},{l:'School-age — 5 to 12 years',e:''},{l:'I am expecting',e:''},{l:'I buy for someone else child',e:''}]
+  };
+
+  if(state.track==='expecting'){
+    state.qs=[baseQ1].concat(QS_EXPECTING);
+  } else if(state.track==='current'){
+    state.qs=[baseQ1].concat(QS_CURRENT.filter(function(q){
+      if(!q.cOn)return true;
+      if(q.cFilter){var picks=state.ans['q2'];return picks&&picks.length>0;}
+      var d=state.ans[q.cOn];if(!d)return false;
+      return q.cVals&&q.cVals.includes(d);
+    }));
+    var q3=state.qs.find(function(q){return q.id==='q3';});
+    if(q3){
+      var picks=state.ans['q2']||[];
+      var noSail=picks.filter(function(p){return p.indexOf('smooth sailing')===-1;});
+      q3.opts=noSail.map(function(p){return{l:p,e:''};});
+    }
+  } else {
+    state.qs=[baseQ1];
+  }
+}
+
+function pct(i){return Math.round(((i+1)/state.qs.length)*100);}
+function ck(){return '<svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1.5 5l2.5 2.5 4.5-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';}
+
+function render(idx){
+  build();
+  if(idx>=state.qs.length)idx=state.qs.length-1;
+  state.cur=idx;
+  var q=state.qs[idx];
+  var a=state.ans[q.id];
+  var done=a!==undefined&&a!==null&&a!==''&&!(Array.isArray(a)&&a.length===0);
+  var tot=state.qs.length;
+  document.getElementById('prog-lbl').textContent='Question '+(idx+1)+' of '+tot;
+  document.getElementById('prog-pct').textContent=pct(idx)+'%';
+  document.getElementById('prog-fill').style.width=pct(idx)+'%';
+
+  var h='';
+  if(q.section)h+='<div class="sec-break"><div class="sec-line"></div><div class="sec-lbl">'+q.section+'</div><div class="sec-line"></div></div>';
+  if(CHEER[q.id])h+='<div class="cheer">'+CHEER[q.id]+'</div>';
+
+  h+='<div class="q-card '+(done?'done':'active')+'" id="qc-'+q.id+'">';
+  h+='<div class="q-hdr"><div class="q-num">'+(done?'&#x2713;':(idx+1))+'</div><div style="flex:1">';
+  h+='<span class="q-badge '+q.bc+'">'+q.badge+'</span>';
+  h+='<div class="q-text">'+q.text+(q.req?'<span class="req">*</span>':'')+'</div>';
+  if(q.sub)h+='<div class="q-sub">'+q.sub+'</div>';
+  h+='</div></div>';
+
+  if(q.fmt==='radio'||q.fmt==='checkbox'){
+    var mx=q.max||(q.fmt==='checkbox'?999:1);
+    h+='<div class="opts">';
+    (q.opts||[]).forEach(function(o){
+      var sa=Array.isArray(a)?a:(a?[a]:[]);
+      var sel=q.fmt==='radio'?a===o.l:sa.includes(o.l);
+      var sv=encodeURIComponent(o.l);
+      h+='<div class="opt'+(sel?' sel':'')+'" data-id="'+q.id+'" data-v="'+sv+'" data-fmt="'+q.fmt+'" data-mx="'+mx+'" onclick="pick(this)">';
+      h+='<div class="opt-box'+(q.fmt==='radio'?' round':'')+'">'+ck()+'</div>';
+      h+='<span class="opt-label" style="margin-left:10px">'+o.l+'</span></div>';
+    });
+    h+='</div>';
+    if(q.hasBrandInput&&a&&a.indexOf('I will name it')>-1){
+      h+='<input class="q-input" id="brand-input" type="text" placeholder="e.g. Cerelac, Sebamed Baby, PediaSure..." value="'+escHtml(state.brandText)+'" oninput="state.brandText=this.value">';
+    }
+  } else if(q.fmt==='rating'){
+    var v=a||0;
+    h+='<div class="stars-wrap"><div class="stars">';
+    for(var i=1;i<=5;i++)h+='<span class="star'+(i<=v?' lit':'')+'" onclick="rate(\''+q.id+'\','+i+')">\u2605</span>';
+    h+='</div><div class="star-labels"><span>'+q.lo+'</span><span>'+q.hi+'</span></div></div>';
+  } else if(q.fmt==='nps'){
+    var nv=a!==undefined&&a!==''?Number(a):-1;
+    h+='<div class="nps-row">';
+    for(var n=0;n<=10;n++)h+='<div class="nps-btn'+(nv===n?' sel':'')+'" onclick="nps(\''+q.id+'\','+n+')">'+n+'</div>';
+    h+='</div><div class="nps-labels"><span>Not at all likely</span><span>Extremely likely</span></div>';
+  } else {
+    h+='<textarea class="q-textarea" id="ta-'+q.id+'" placeholder="'+q.ph+'" oninput="txt(\''+q.id+'\',this.value)">'+(a||'')+'</textarea>';
+    h+='<div class="char-hint" id="ch-'+q.id+'">'+(((a||'').length>0)?((a||'').length+' characters'):'No minimum \u2014 even one sentence is wonderful')+'</div>';
+  }
+
+  h+='</div>';
+  var last=idx===tot-1;
+  h+='<div class="nav-bar">';
+  h+='<button class="btn btn-back" onclick="prev()" '+(idx===0?'disabled':'')+'>\u2190 Back</button>';
+  h+='<span class="nav-prog">'+(idx+1)+' / '+tot+'</span>';
+  h+='<button class="btn btn-next" onclick="'+(last?'submit()':'next()')+'">'+( last?'Submit &#x2713;':'Next \u2192')+'</button>';
+  h+='</div>';
+
+  document.getElementById('survey-body').innerHTML=h;
+  window.scrollTo({top:0,behavior:'smooth'});
+  if(q.hasBrandInput&&a&&a.indexOf('I will name it')>-1){
+    var bi=document.getElementById('brand-input');
+    if(bi)bi.focus();
+  }
+}
+
+function escHtml(s){return s.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');}
+
+function pick(el){
+  var id=el.dataset.id,val=decodeURIComponent(el.dataset.v),fmt=el.dataset.fmt,mx=parseInt(el.dataset.mx);
+  if(fmt==='radio'){
+    state.ans[id]=val;
+    if(id==='q11'&&val.indexOf('I will name it')===-1)state.brandText='';
+  } else {
+    var arr=state.ans[id]?[...state.ans[id]]:[];
+    var i=arr.indexOf(val);
+    if(i>-1)arr.splice(i,1);else if(arr.length<mx)arr.push(val);
+    state.ans[id]=arr;
+  }
+  build();render(state.cur);
+}
+
+function rate(id,v){state.ans[id]=v;render(state.cur);}
+function nps(id,v){state.ans[id]=v;render(state.cur);}
+
+function txt(id,v){
+  state.ans[id]=v;
+  var cc=document.getElementById('ch-'+id);
+  if(cc)cc.textContent=v.length>0?(v.length+' characters'):'No minimum \u2014 even one sentence is wonderful';
+}
+
+function flash(id){
+  var c=document.getElementById('qc-'+id);
+  if(c){c.style.borderColor='#E8602A';c.style.background='#FEF0EB';setTimeout(function(){c.style.borderColor='';c.style.background='';},1400);}
+}
+
+function valid(){
+  var q=state.qs[state.cur];
+  if(!q.req)return true;
+  var a=state.ans[q.id];
+  if(q.fmt==='nps'){if(a===undefined||a==='')  {flash(q.id);return false;}return true;}
+  if(!a||(Array.isArray(a)&&a.length===0)||a===''){flash(q.id);return false;}
+  return true;
+}
+
+function next(){if(valid()&&state.cur<state.qs.length-1)render(state.cur+1);}
+function prev(){if(state.cur>0)render(state.cur-1);}
+
+function submit(){
+  if(!valid())return;
+  var nb=document.getElementById('survey-body').querySelector('.btn-next');
+  if(nb){nb.disabled=true;nb.textContent='Submitting\u2026';}
+
+  var g=function(id){return state.ans[id]||'';};
+  var gj=function(id){return(state.ans[id]||[]).join(' | ');};
+
+  var headMap={'Barely a thought \u2014 it is manageable':1,'A background worry I check in on':2,'A recurring stressor I actively manage':3,'It is consuming \u2014 I think about it every day':4};
+  var headVal=headMap[g('q4')]||0;
+  var perfVal=Number(g('q7')||0);
+  var gap=headVal&&perfVal?(headVal-perfVal):'';
+
+  var isExp = state.track === 'expecting';
+
+  var params=new URLSearchParams({
+    timestamp:       new Date().toISOString(),
+    track:           (state.track === 'expecting' ? 'expecting' : (state.track === 'current' ? 'current' : (state.track ? 'current' : ''))),
+    q1_age:          isExp ? 'Expecting' : g('q1'),
+    q2_worries:      isExp ? gj('eq2') : gj('q2'),
+    q3_top_worry:    isExp ? gj('eq3') : g('q3'),
+    q4_headspace:    isExp ? '' : g('q4'),
+    q4_importance_score: isExp ? '' : String(headVal || ''),
+    q5_turns_to:     isExp ? g('eq4') : gj('q5'),
+    q6_trusted_platform: isExp ? '' : g('q6'),
+    q7_1mg_performance:  isExp ? '' : g('q7'),
+    gap_score:       isExp ? '' : gap,
+    q8_walked_away:  isExp ? '' : g('q8'),
+    q8b_went_instead: isExp ? '' : g('q8b'),
+    q9_oos_feeling:  isExp ? '' : g('q9'),
+    q10_parent_os:   isExp ? g('eq6') : gj('q10'),
+    q11_missing_brand: isExp ? g('eq5') : g('q11'),
+    q11_brand_name:  state.brandText || '',
+    q12_nps:         isExp ? g('eq7') : g('q12'),
+    q13_advice:      isExp ? g('eq8') : g('q13'),
+    device:          navigator.userAgent.indexOf('Mobile') > -1 ? 'Mobile' : 'Desktop',
+    ua:              navigator.userAgent.substring(0, 120),
+    exp_newborn_worries:  isExp ? gj('eq2') : '',
+    exp_stocking_up:      isExp ? gj('eq3') : '',
+    exp_planned_platform: isExp ? g('eq4')  : ''
+  });
+
+  var ifr=document.createElement('iframe');ifr.name='st';ifr.style.display='none';document.body.appendChild(ifr);
+  var frm=document.createElement('form');frm.method='POST';frm.action=SHEET;frm.target='st';frm.style.display='none';
+  params.forEach(function(v,k){var inp=document.createElement('input');inp.type='hidden';inp.name=k;inp.value=v;frm.appendChild(inp);});
+  document.body.appendChild(frm);frm.submit();
+
+  setTimeout(function(){
+    try{document.body.removeChild(frm);document.body.removeChild(ifr);}catch(e){}
+    document.getElementById('survey-body').style.display='none';
+    document.getElementById('prog-wrap').style.display='none';
+    document.getElementById('done-screen').style.display='block';
+    window.scrollTo({top:0,behavior:'smooth'});
+  },1500);
+}
+
+build();render(0);
+</script>
+</body>
+</html>
